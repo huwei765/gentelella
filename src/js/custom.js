@@ -6,8 +6,6 @@
 
 var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
     $BODY = $('body'),
-    $MENU_TOGGLE = $('#menu_toggle'),
-    $SIDEBAR_MENU = $('#sidebar-menu'),
     $SIDEBAR_FOOTER = $('.sidebar-footer'),
     $LEFT_COL = $('.left_col'),
     $RIGHT_COL = $('.right_col'),
@@ -17,6 +15,12 @@ var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
 // Sidebar
 $(document).ready(function() {
     // TODO: This is some kind of easy fix, maybe we can improve this
+    var showLeftAndNavAndFooter = function(){
+        $LEFT_COL.html(template('left_col', {}));
+        $NAV_MENU.html(template('nav_menu', {}));
+        $FOOTER.html(template('footer', {}));
+    };
+    showLeftAndNavAndFooter();//动态加载部分内容
     var setContentHeight = function () {
         // reset height
         $RIGHT_COL.css('min-height', $(window).height());
@@ -31,7 +35,8 @@ $(document).ready(function() {
 
         $RIGHT_COL.css('min-height', contentHeight);
     };
-
+    var $SIDEBAR_MENU = $('#sidebar-menu');
+    var $MENU_TOGGLE = $('#menu_toggle');
     $SIDEBAR_MENU.find('a').on('click', function(ev) {
         var $li = $(this).parent();
 
