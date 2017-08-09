@@ -40,9 +40,10 @@ To have all gulp dependencies run ```npm install```
 If `gulp` is installed, follow the steps below.
 
 1. Fork and clone the repo.
-2. Run `gulp`, this will open gentelella on your default browser
-3. Now you can code, code and code!
-4. Submit a pull request
+2. Run tmod ./src/tpl --output .build/js
+3. Run `gulp`, this will open gentelella on your default browser
+4. Now you can code, code and code!
+5. Submit a pull request
 
 ## Gentelella for other platforms and frameworks
 
